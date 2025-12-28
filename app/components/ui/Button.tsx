@@ -1,8 +1,7 @@
 import { cn } from "../../lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 
-interface ButtonProps
-  extends Omit<HTMLMotionProps<"button">, "children"> {
+interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
@@ -21,11 +20,11 @@ export function Button({
     "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
-    primary: "bg-slate-900 text-white hover:bg-slate-800",
-    secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
+    primary: "bg-lemon-500 text-forest-900 hover:bg-lemon-600 shadow-sm",
+    secondary: "bg-sky-300 text-forest-900 hover:bg-sky-400 shadow-sm",
     outline:
-      "border border-slate-200 bg-transparent hover:bg-slate-50 text-slate-900",
-    ghost: "hover:bg-slate-100 text-slate-900",
+      "border-2 border-dusk bg-transparent hover:bg-dusk hover:text-white text-forest-900",
+    ghost: "hover:bg-slate-100 text-forest-900",
   };
   const sizes = {
     sm: "h-9 px-3 text-sm",

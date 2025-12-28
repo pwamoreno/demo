@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import { cn } from "../../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -67,7 +68,13 @@ const handleNavClick = () => {
             href="/"
             className="text-2xl font-bold tracking-tight text-slate-900 z-50"
           >
-            AGENCY<span className="text-slate-400">.</span>
+            <Image
+              src="/Asset2.svg"
+              alt="Logo"
+              width={300}
+              height={80}
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -77,7 +84,7 @@ const handleNavClick = () => {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-slate-900 relative group",
+                  "text-sm font-medium transition-colors text-forest-800 hover:text-lemon-500 relative group",
                   pathname === link.href
                     ? "text-slate-900"
                     : "text-slate-600"
@@ -87,7 +94,7 @@ const handleNavClick = () => {
                 {pathname === link.href && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-slate-900"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-lemon-500"
                   />
                 )}
               </Link>
@@ -96,8 +103,8 @@ const handleNavClick = () => {
 
           {/* Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/shop" className="text-slate-600 hover:text-slate-900">
-              <ShoppingBag className="h-5 w-5" />
+            <Link href="/shop" className="bg-lemon-500 p-2 rounded-md transition-colors hover:bg-lemon-600 hover:cursor-pointer">
+              <ShoppingBag className="h-5 w-5 text-dusk"/>
             </Link>
             <Link href="/contact">
               <Button size="sm" className="cursor-pointer">Start a Project</Button>

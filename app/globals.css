@@ -115,6 +115,49 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@theme {
+  --color-lemon-50: #eaeba0;
+  --color-lemon-100: #ebed8f;
+  --color-lemon-200: #e9ea7c;
+  --color-lemon-300: #ebed67;
+  --color-lemon-400: #e9eb55;
+  --color-lemon-500: #E3E53B;
+  --color-lemon-600: #d9dc31;
+  --color-lemon-700: #cfd224;
+  --color-lemon-800: #bec117;
+  --color-lemon-900: #afb20c;
+
+  --color-offwhite: #f0efef;
+  --color-offwhite1: #fafafa;
+
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #9DC4D5;
+  --color-sky-400: #7DD3FC;
+  --color-sky-500: #38BDF8;
+  --color-sky-600: #0ea5e9;
+  --color-sky-700: #0284c7;
+  --color-sky-800: #0369a1;
+  --color-sky-900: #075985;
+
+  --color-forest-50: #f0fdf4;
+  --color-forest-100: #dcfce7;
+  --color-forest-200: #bbf7d0;
+  --color-forest-300: #86efac;
+  --color-forest-400: #4ade80;
+  --color-forest-500: #22c55e;
+  --color-forest-600: #16a34a;
+  --color-forest-700: #15803d;
+  --color-forest-800: #166534;
+  --color-forest-900: #14532d;
+
+  --color-dusk: #262626;
+
+  --font-sans: "Inter", "system-ui", "sans-serif";
+
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
