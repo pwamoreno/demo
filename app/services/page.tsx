@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "../../components/ui/button"
+import { Button } from "@/app/components/ui/Button"
 import { ServiceCard } from "../components/ServiceCard"
 import { services } from "../lib/data"
 
@@ -22,10 +22,10 @@ const page = () => {
         </div>
 
         {/* Process Section */}
-        <div className="bg-slate-900 rounded-3xl p-8 md:p-16 text-white">
+        <div className="bg-dusk rounded-3xl p-8 md:p-16 text-lemon-500">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">How We Work</h2>
-            <p className="text-slate-400 text-lg">
+            <p className="text-lemon-500 text-lg">
               Our proven process ensures we deliver high-quality results on
               time, every time.
             </p>
@@ -45,17 +45,20 @@ const page = () => {
             title: 'Deliver',
             desc: 'We build, test, and launch your product.'
           }].map(item => <div key={item.step} className="relative">
-                <div className="text-6xl font-bold text-slate-800 mb-4">
+                <div className="text-6xl font-bold text-lemon-500 mb-4">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-slate-400">{item.desc}</p>
+                <p className="text-lemon-500">{item.desc}</p>
               </div>)}
           </div>
 
           <div className="text-center mt-16">
             <Link href="/contact">
-              <Button className="bg-white text-slate-900 hover:bg-slate-100">
+              <Button 
+                className="hover:cursor-pointer"
+                variant="primary"
+              >
                 Start a Project
               </Button>
             </Link>

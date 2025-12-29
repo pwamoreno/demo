@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -34,7 +34,7 @@ const Home = () => {
               </p>
             </div>
             <Link href="/work" className="hidden md:block">
-              <Button variant="ghost" className="group">
+              <Button variant="ghost" className="group hover:cursor-pointer">
                 View All Work{" "}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -103,7 +103,7 @@ const Home = () => {
       <TestimonialSection />
 
       {/* CTA Section */}
-      <section className="py-32 bg-slate-900 text-white text-center">
+      <section className="py-32 bg-forest-900 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to start your project?
@@ -114,8 +114,9 @@ const Home = () => {
           </p>
           <Link href="/contact">
             <Button
+              variant="primary"
               size="lg"
-              className="bg-white text-slate-900 hover:bg-slate-100"
+              className="bg-offwhite text-forest-900 hover:bg-lemon-500 hover:cursor-pointer"
             >
               Get in Touch
             </Button>

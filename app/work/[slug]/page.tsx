@@ -4,20 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects } from "../../lib/data";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/Button";
 import { MasonryGrid } from "../../components/ui/MasonryGrid";
 
 import { useParams } from 'next/navigation';
 
-// interface CaseStudyProps {
-//   params: {
-//     slug: string;
-//   };
-// }
-
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
-  console.log("Slug:", slug);
+  // console.log("Slug:", slug);
   const project = projects.find((p) => p.slug === slug);
 
   if (!project)
@@ -25,7 +19,7 @@ const CaseStudy = () => {
 
   return (
     <div>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white" data-hero-theme="dark">
         {/* Hero */}
         <div className="h-[60vh] md:h-[80vh] relative w-full overflow-hidden">
           <Image
@@ -40,7 +34,7 @@ const CaseStudy = () => {
             <div className="max-w-7xl mx-auto">
               <Link
                 href="/work"
-                className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-lemon-500 mb-6 transition-colors"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Work
               </Link>
@@ -139,7 +133,7 @@ const CaseStudy = () => {
             Ready to start your project?
           </h2>
           <Link href="/contact">
-            <Button size="lg">Get in Touch</Button>
+            <Button size="lg" className="hover:cursor-pointer">Get in Touch</Button>
           </Link>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import Image from "next/image";
 export function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
@@ -12,7 +13,12 @@ export function Footer() {
               href="/"
               className="text-2xl font-bold tracking-tight text-slate-900 block mb-4"
             >
-              AGENCY<span className="text-slate-400">.</span>
+              <Image
+                src="/Asset2.svg"
+                alt="protean logo"
+                width={100}
+                height={40}
+              />
             </Link>
             <p className="text-slate-600 text-sm leading-relaxed">
               We design and build digital products that scale. Based in San
@@ -92,7 +98,7 @@ export function Footer() {
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Agency Inc. All rights reserved.
+            © {new Date().getFullYear()} Protean Studio. All rights reserved.
           </p>
           <div className="flex space-x-6 text-slate-400">
             <Instagram className="h-5 w-5 hover:text-slate-900 cursor-pointer" />

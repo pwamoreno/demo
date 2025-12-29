@@ -32,8 +32,8 @@ const Shop = () => {
                 onClick={() => setCategory(cat)}
                 className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
                   category === cat
-                    ? "bg-slate-900 text-white shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
+                    ? "bg-forest-900 text-lemon-500 shadow-sm"
+                    : "text-dusk hover:text-slate-900"
                 }`}
               >
                 {cat}

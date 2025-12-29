@@ -17,26 +17,26 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="font-bold text-slate-900 mb-2">Email</h3>
-                <p className="text-slate-600">hello@agency.com</p>
+                <p className="text-slate-600">studio@protean.com</p>
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 mb-2">Office</h3>
                 <p className="text-slate-600">
                   123 Design Street
                   <br />
-                  San Francisco, CA 94103
+                  San Moreno, AM 94103
                 </p>
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 mb-2">Social</h3>
                 <div className="flex gap-4 text-slate-600">
-                  <a href="#" className="hover:text-slate-900">
+                  <a href="#" className="hover:text-forest-900">
                     Twitter
                   </a>
-                  <a href="#" className="hover:text-slate-900">
+                  <a href="#" className="hover:text-forest-900">
                     Instagram
                   </a>
-                  <a href="#" className="hover:text-slate-900">
+                  <a href="#" className="hover:text-forest-900">
                     LinkedIn
                   </a>
                 </div>

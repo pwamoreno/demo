@@ -107,7 +107,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="w-full"
+          className="w-full hover:cursor-pointer"
           isLoading={isSubmitting}
         >
           Send Message

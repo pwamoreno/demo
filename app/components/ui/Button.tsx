@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "../../lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 
@@ -24,7 +26,7 @@ export function Button({
     secondary: "bg-sky-300 text-forest-900 hover:bg-sky-400 shadow-sm",
     outline:
       "border-2 border-dusk bg-transparent hover:bg-dusk hover:text-white text-forest-900",
-    ghost: "hover:bg-slate-100 text-forest-900",
+    ghost: "hover:bg-lemon-500 text-forest-900",
   };
   const sizes = {
     sm: "h-9 px-3 text-sm",

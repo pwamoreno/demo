@@ -12,25 +12,35 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDarkHero, setIsDarkHero] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
+    // Check if the page has a dark hero section
+    const checkHeroTheme = () => {
+      const heroSection = document.querySelector("[data-hero-theme]");
+      if (heroSection) {
+        const theme = heroSection.getAttribute("data-hero-theme");
+        setIsDarkHero(theme === "dark");
+      } else {
+        setIsDarkHero(false);
+      }
+    };
+
+    // Check immediately and on path changes
+    checkHeroTheme();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
-
-//   useEffect(() => {
-//     setIsOpen(false);
-//   }, [pathname]);
-
-const handleNavClick = () => {
-  setIsOpen(false);
-};
-
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
 
   const navLinks = [
     {
@@ -51,13 +61,15 @@ const handleNavClick = () => {
     },
   ];
 
+  // Determine if we should use light text (dark background)
+  const useLightText = !scrolled && isDarkHero;
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-slate-100 py-4"
+          ? "bg-white backdrop-blur-md border-b border-slate-100 py-4"
           : "bg-transparent py-6"
       )}
     >
@@ -66,14 +78,17 @@ const handleNavClick = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold tracking-tight text-slate-900 z-50"
+            className="text-2xl font-bold tracking-tight z-50 relative"
           >
             <Image
               src="/Asset2.svg"
-              alt="Logo"
+              alt="protean logo"
               width={300}
               height={80}
-              className="h-10 w-auto"
+              className={cn(
+                "h-10 w-auto transition-all duration-300",
+                useLightText && "brightness-0 invert"
+              )}
             />
           </Link>
 
@@ -84,17 +99,24 @@ const handleNavClick = () => {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors text-forest-800 hover:text-lemon-500 relative group",
-                  pathname === link.href
+                  "text-sm font-medium transition-all duration-300 relative group",
+                  useLightText
+                    ? pathname === link.href
+                      ? "text-white font-semibold"
+                      : "text-white/90 hover:text-lemon-500"
+                    : pathname === link.href
                     ? "text-slate-900"
-                    : "text-slate-600"
+                    : "text-slate-600 hover:text-lemon-500"
                 )}
               >
                 {link.name}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-lemon-500"
+                    className={cn(
+                      "absolute -bottom-1 left-0 right-0 h-0.5 transition-colors duration-300",
+                      useLightText ? "bg-white" : "bg-lemon-500"
+                    )}
                   />
                 )}
               </Link>
@@ -103,21 +125,45 @@ const handleNavClick = () => {
 
           {/* Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/shop" className="bg-lemon-500 p-2 rounded-md transition-colors hover:bg-lemon-600 hover:cursor-pointer">
-              <ShoppingBag className="h-5 w-5 text-dusk"/>
+            <Link
+              href="/shop"
+              className={cn(
+                "p-2 rounded-md transition-all duration-300",
+                useLightText
+                  ? "bg-lemon-500 backdrop-blur-sm hover:bg-lemon-600"
+                  : "bg-lemon-500 hover:bg-lemon-600"
+              )}
+            >
+              <ShoppingBag
+                className={cn(
+                  "h-5 w-5 transition-colors duration-300",
+                  useLightText ? "text-forest-900" : "text-dusk"
+                )}
+              />
             </Link>
             <Link href="/contact">
-              <Button size="sm" className="cursor-pointer">Start a Project</Button>
+              <Button
+                size="sm"
+                className={cn(
+                  "cursor-pointer transition-all duration-300",
+                  useLightText && "bg-lemon-500 hover:bg-lemon-600 text-slate-900"
+                )}
+              >
+                Start a Project
+              </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden z-50 p-2 text-slate-600"
+          <Button
+            className={cn(
+              "md:hidden z-50 p-2 transition-all duration-300",
+              useLightText ? "text-white" : "text-slate-600"
+            )}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}
-          </button>
+          </Button>
         </div>
       </div>
 

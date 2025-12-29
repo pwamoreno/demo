@@ -41,8 +41,8 @@ const Work = () => {
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filter === cat
-                    ? "bg-slate-900 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-forest-900 text-white"
+                    : "bg-lemon-50 text-dusk hover:cursor-pointer hover:text-offwhite hover:bg-forest-900"
                 }`}
               >
                 {cat}

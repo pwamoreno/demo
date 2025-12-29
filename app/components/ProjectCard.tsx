@@ -28,11 +28,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
                 {project.client}
               </p>
-              <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-slate-900 group-hover:text-lemon-500 transition-colors">
                 {project.title}
               </h3>
             </div>
-            <ArrowUpRight className="h-5 w-5 text-slate-300 group-hover:text-blue-600 transition-colors" />
+            <ArrowUpRight className="h-5 w-5 text-slate-300 group-hover:text-lemon-500 transition-colors" />
           </div>
           <p className="text-slate-600 text-sm line-clamp-2 mb-4 flex-1">
             {project.description}
