@@ -15,7 +15,7 @@ const Hero = () => {
       {isLoading && (
         <LoadingScreen
           onLoadingComplete={() => setIsLoading(false)}
-          duration={25}
+          duration={5}
         />
       )}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden ">
