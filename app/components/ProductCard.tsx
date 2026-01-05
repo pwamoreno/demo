@@ -22,14 +22,14 @@ export function ProductCard({ product }: ProductCardProps) {
             loading="lazy"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-end">
-            <span className="bg-white text-slate-900 text-xs font-bold px-2 py-1 rounded">
+            <span className="bg-white text-dusk text-xs font-bold px-2 py-1 rounded">
               {formatCurrency(product.price)}
             </span>
           </div>
         </div>
         <div className="p-4">
           <p className="text-xs text-slate-500 mb-1">{product.category}</p>
-          <h3 className="text-base font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-base font-semibold text-dusk group-hover:text-lemon-500 transition-colors">
             {product.title}
           </h3>
         </div>

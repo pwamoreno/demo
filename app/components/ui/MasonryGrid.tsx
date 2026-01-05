@@ -24,7 +24,9 @@ export function MasonryGrid({
     lg: 4,
   },
 }: MasonryGridProps) {
+
   const [columnCount, setColumnCount] = useState(columns.default);
+
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -38,6 +40,7 @@ export function MasonryGrid({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [columns]);
+
   // Distribute children into columns
   const gridColumns: React.ReactNode[][] = Array.from(
     {
@@ -45,11 +48,13 @@ export function MasonryGrid({
     },
     () => []
   );
+
   Children.forEach(children, (child, index) => {
     if (isValidElement(child)) {
       gridColumns[index % columnCount].push(child);
     }
   });
+  
   return (
     <div className={cn("flex gap-6", className)}>
       {gridColumns.map((col, i) => (
